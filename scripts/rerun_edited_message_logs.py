@@ -13,7 +13,7 @@ app = typer.Typer()
 def main(
     messages_path: str,
     out_path: str | None = None,
-    model: str = "gpt-4",
+    model: str = "gpt-3.5-turbo-16k",
     temperature: float = 0.1,
 ):
     ai = AI(
