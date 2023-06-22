@@ -70,7 +70,7 @@ def parse_files_by_ai(chat, model="gpt-3.5-turbo-0613"):  # -> List[Tuple[str, s
 
 def parse_chat(chat):  # -> List[Tuple[str, str]]:
     # Get all ``` blocks and preceding filenames
-    regex = r"(\S+?)\n```\S+\n(.+?)```"
+    regex = r"(\S+)\n\s*```[^\n]*\n(.+?)```"
     matches = re.finditer(regex, chat, re.DOTALL)
 
     files = []
