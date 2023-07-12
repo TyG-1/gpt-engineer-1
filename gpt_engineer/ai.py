@@ -34,7 +34,6 @@ class AI:
         self.token_usage_log = []
 
         try:
-<<<<<<< HEAD
             openai.Model.retrieve(model)
             self.model = model
         except openai.InvalidRequestError:
@@ -44,16 +43,6 @@ class AI:
                 "https://openai.com/waitlist/gpt-4-api"
             )
             self.model = "gpt-3.5-turbo-16k"
-=======
-            self.tokenizer = tiktoken.encoding_for_model(model)
-        except KeyError:
-            logger.debug(
-                f"Tiktoken encoder for model {model} not found. Using "
-                "cl100k_base encoder instead. The results may therefore be "
-                "inaccurate and should only be used as estimate."
-            )
-            self.tokenizer = tiktoken.get_encoding("cl100k_base")
->>>>>>> d91384c2aa21d3c617d4f7a387c3ad7b4b0823c6
 
     def start(self, system, user, step_name):
         messages = [

@@ -1,3 +1,4 @@
+import os
 import json
 import logging
 
@@ -10,6 +11,8 @@ from gpt_engineer.collect import collect_learnings
 from gpt_engineer.db import DB, DBs, archive
 from gpt_engineer.learning import collect_consent
 from gpt_engineer.steps import STEPS, Config as StepsConfig
+
+openai.api_key = os.environ.get('OPENAI_API_KEY')
 
 app = typer.Typer()
 
